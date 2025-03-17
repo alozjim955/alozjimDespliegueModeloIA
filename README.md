@@ -1,2 +1,2 @@
-# alozjim_despliegue_modelo_ia
-Repositorio del TFG de Alejandro Lozano
+# TFG de Alejandro Lozano Jiménez
+Repositorio del TFG de Alejandro Lozano - Despliegue de un modelo IA a través de la web
