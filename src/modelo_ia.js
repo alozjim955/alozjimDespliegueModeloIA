@@ -4,7 +4,7 @@ dotenv.config();
 
 const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
-const completion = await client.chat.completion.create({
+const completion = await client.chat.completions.create({
     model: "gpt-4o",
     messages: [
         {
