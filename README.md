@@ -2,7 +2,7 @@
 
 ```
 Autor: Alejandro Lozano Jiménez
-Tutor: Blanca Vargas Machuca Redondo
+Tutor: Francisco Javier Ávila Sánchez
 ```
 ```
 I.E.S. Francisco Romero Vargas (Jerez de la Frontera)
