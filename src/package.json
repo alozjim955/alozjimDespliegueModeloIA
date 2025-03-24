@@ -2,6 +2,10 @@
   "type": "module",
   "dependencies": {
     "dotenv": "^16.4.7",
-    "openai": "^4.87.3"
+    "openai": "^4.87.3",
+    "react": "^19.0.0"
+  },
+  "devDependencies": {
+    "vite": "^6.2.3"
   }
 }
