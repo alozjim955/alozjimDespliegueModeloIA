@@ -1,35 +1,95 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import axios from 'axios';
 
-function App() {
-  const [count, setCount] = useState(0)
+const Chat = () => {
+  const [message, setMessage] = useState('');  // Estado para el mensaje del usuario
+  const [chatHistory, setChatHistory] = useState([]); // Historial de mensajes
+
+  // Función para manejar el cambio en el campo de texto
+  const handleMessageChange = (e) => {
+    setMessage(e.target.value);
+  };
+
+  // Función para manejar el envío de mensajes
+  const sendMessage = async (e) => {
+    e.preventDefault(); // Evita que el formulario recargue la página
+    if (!message.trim()) return; // No enviar si el campo está vacío
+
+    // Agregar el mensaje del usuario al historial
+    setChatHistory([...chatHistory, { sender: 'user', text: message }]);
+    setMessage(''); // Limpiar el campo de entrada
+
+    try {
+      // Enviar la solicitud a tu servidor backend
+      const response = await axios.post("http://localhost:5000/chat", {
+        message: message,
+      });
+
+      const aiMessage = response.data.message;
+      // Agregar la respuesta de la IA al historial
+      setChatHistory((prevHistory) => [
+        ...prevHistory,
+        { sender: 'ai', text: aiMessage },
+      ]);
+    } catch (error) {
+      console.error("Error al obtener la respuesta:", error);
+      setChatHistory((prevHistory) => [
+        ...prevHistory,
+        { sender: 'ai', text: 'Hubo un error al obtener la respuesta.' },
+      ]);
+    }
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div>
+      <div className="chat-container" style={{ maxHeight: '400px', overflowY: 'scroll' }}>
+        {chatHistory.map((msg, index) => (
+          <div key={index} style={{ textAlign: msg.sender === 'user' ? 'right' : 'left' }}>
+            <p
+              style={{
+                background: msg.sender === 'user' ? '#d1f7d6' : '#f1f0f0',
+                padding: '10px',
+                borderRadius: '10px',
+                maxWidth: '70%',
+                margin: '5px',
+              }}
+            >
+              {msg.text}
+            </p>
+          </div>
+        ))}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
 
-export default App
+      <form onSubmit={sendMessage} style={{ display: 'flex', marginTop: '10px' }}>
+        <input
+          type="text"
+          value={message}
+          onChange={handleMessageChange}
+          placeholder="Escribe un mensaje..."
+          style={{
+            width: '80%',
+            padding: '10px',
+            borderRadius: '5px',
+            border: '1px solid #ccc',
+          }}
+        />
+        <button
+          type="submit"
+          style={{
+            padding: '10px',
+            borderRadius: '5px',
+            marginLeft: '10px',
+            backgroundColor: '#007bff',
+            color: 'white',
+            border: 'none',
+            cursor: 'pointer',
+          }}
+        >
+          Enviar
+        </button>
+      </form>
+    </div>
+  );
+};
+
+export default Chat;
