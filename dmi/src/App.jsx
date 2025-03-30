@@ -4,31 +4,29 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [prompt, setPrompt] = useState("");
+  const [respuesta, setRespuesta] = useState("");
 
+  function llamadaApiOpenAI() {
+    console.log("Llamada a la API de OpenAI");
+  }
+
+  console.log(prompt);
   return (
-    <>
+    <div className="App">
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <textarea 
+          onChange={(e) => setPrompt(e.target.value)}
+          placeholder='Texto del prompt.'
+          cols={50}
+          rows={10}
+        />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div>
+        <button onClick={llamadaApiOpenAI}>Enviar</button>
+        {respuesta != "" ? <div><p>Respuesta:</p></div> : null}
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 
