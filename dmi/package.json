@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "^1.3.6",
+    "@ai-sdk/react": "^1.2.5",
+    "@nanostores/react": "github:ai/react",
     "ai": "^4.2.10",
     "dotenv": "^16.4.7",
     "path": "^0.12.7",
