@@ -9,7 +9,7 @@ export const duracionMax = 10;
 export async function POST(req: Request) {
   const { messages } = await req.json();
 
-  const { response } = streamText({
+  const resultado = streamText({
     model: openai("o3-mini"),
     system: "Eres un asistente de colegio",
     messages,
@@ -20,5 +20,5 @@ export async function POST(req: Request) {
 
   });
 
-  return response;
+  return resultado.toDataStreamResponse();
 }
