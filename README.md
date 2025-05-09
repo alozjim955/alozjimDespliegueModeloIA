@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Despliegue web de modelo IA
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+Autor: Alejandro Lozano Jiménez
+Tutor: Francisco Javier Ávila Sánchez
+```
+```
+I.E.S. Francisco Romero Vargas (Jerez de la Frontera)
+Administración de Sistemas Informáticos en Red
+Curso: 2024/
+```
+**Preparación............................................................................................................................ 2**
+Introducción........................................................................................................................ 2
+Finalidad............................................................................................................................. 2
+Objetivos............................................................................................................................ 2
+Medios necesarios............................................................................................................. 2
+Planificación....................................................................................................................... 2
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+**Despliegue web de modelo IA. Alejandro Lozano Jiménez**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Preparación
 
-## Learn More
+### Introducción
 
-To learn more about Next.js, take a look at the following resources:
+El proyecto consiste en crear una aplicación que utilice Inteligencia Artificial y que realice las
+tareas que le pida el usuario. La aplicación entonces se desplegará en un contenedor online
+para su fácil portabilidad y acceso.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Finalidad
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Al tener una Inteligencia Artificial en la empresa, varias tareas pueden delegarse para su
+directa automatización. Por ejemplo, la documentación de los proyectos de la empresa
+pueden ser escritas por esta aplicación; o incorporar un sistema automático de atención al
+cliente.
 
-## Deploy on Vercel
+### Objetivos
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+En este proyecto se escribirá un programa que se encargue del funcionamiento del modelo
+IA y su comportamiento. Después, se envolverá en una aplicación web (también
+programada a mano) la cual se desplegará en un contenedor en la nube para que sea
+portable, multiplataforma y fácilmente accesible desde un navegador web.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Medios necesarios
+
+- Ordenador con una tarjeta gráfica (preferiblemente de Nvidia).
+- Editor de texto/IDE.
+- Servicio de hospedaje en la nube.
+- Intérprete de Python y/o Javascript y librerías.
+- Conocimiento técnico de Python y la infraestructura web.
+
+### Planificación
+
+- Elección de las distintas librerías y dependencias de nuestro proyecto (PyTorch,
+    Transformers, etc): 2 horas
+- Configuración del entorno de desarrollo: 1 hora
+- Adquisición del servicio de contenedores y su puesta en marcha: 1 hora
+- Programación del núcleo del proyecto (armar el modelo IA en Python): 30 horas
+- Creación de la envoltura web del núcleo (escribir la aplicación en
+    Javascript/Typescript o Python): 20 horas
+- Unión de los dos módulos creados: 5 horas
+- Despliegue de la aplicación en un contenedor en la nube: 3 horas
+- Testeo del proyecto en su conjunto: 8 horas
+
+Horas totales planificadas para el proyecto: 70 horas
