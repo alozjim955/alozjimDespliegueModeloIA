@@ -1,0 +1,24 @@
+# docker-compose.yml
+
+services:
+  chat-ia:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: dmin:latest
+    container_name: dmin
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=production
+      - NEXT_TELEMETRY_DISABLED=1
+      - JWT_SECRET=${JWT_SECRET}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - SQLITE_PATH=/app/data/chat.db
+    volumes:
+      - chat_data:/app/data
+    restart: unless-stopped
+
+volumes:
+  chat_data:
+    name: chat_data
