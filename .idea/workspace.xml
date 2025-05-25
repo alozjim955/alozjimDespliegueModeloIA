@@ -5,29 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a9a32f2-3147-426d-97fb-865c9ed4d735" name="Changes" comment="Implementación de menús desplegables de modelo IA y asistente prederteminado. Prototipo de subida de imagenes.">
-      <change afterPath="$PROJECT_DIR$/src/app/api/ocr/route.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/api/upload/route.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/ChatWindow.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat.db" beforeDir="false" afterPath="$PROJECT_DIR$/chat.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/auth/login/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/auth/login/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/auth/logout/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/auth/logout/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/auth/profile/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/auth/profile/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/auth/register/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/auth/register/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/chat/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/chat/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/conversations/[id]/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/conversations/[id]/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/conversations/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/conversations/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/NavBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Sidebar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/login/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/register/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/register/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/db.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,25 +37,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "js.debugger.nextJs.config.created.client": "true",
-    "js.debugger.nextJs.config.created.server": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.Next.js: server-side.executor": "Run",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
+    &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.Next.js: server-side.executor&quot;: &quot;Run&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="npm.Next.js: server-side">
     <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
       <method v="2" />
@@ -108,6 +87,9 @@
       <updated>1746893253248</updated>
       <workItem from="1746893255095" duration="191000" />
       <workItem from="1746980272307" duration="4431000" />
+      <workItem from="1746991831228" duration="620000" />
+      <workItem from="1746994527343" duration="596000" />
+      <workItem from="1746995603127" duration="15000" />
     </task>
     <servers />
   </component>
