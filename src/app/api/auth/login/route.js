@@ -1,35 +1,41 @@
+// src/app/api/auth/login/route.js
 import db from '@/lib/db';
-import { verifyPassword, signToken } from '@/lib/auth';
+import { comparePasswords, generateToken } from '@/lib/auth';
+import { NextResponse } from 'next/server';
 
 export async function POST(req) {
   const { username, password } = await req.json();
   if (!username || !password) {
-    return new Response('Faltan campos', { status: 400 });
+    return NextResponse.json({ error: 'Faltan campos' }, { status: 400 });
   }
 
-  // obtenemos al usuario
   const user = await new Promise((res, rej) => {
     db.get(
-      `SELECT id, passwordHash FROM users WHERE username = ?`,
+      `SELECT id, passwordHash, role, username FROM users WHERE username = ?`,
       [username],
       (err, row) => (err ? rej(err) : res(row))
     );
   });
-
   if (!user) {
-    return new Response('Usuario no encontrado', { status: 404 });
+    return NextResponse.json({ error: 'Usuario no encontrado' }, { status: 404 });
   }
 
-  const valid = await verifyPassword(password, user.passwordHash);
+  const valid = await comparePasswords(password, user.passwordHash);
   if (!valid) {
-    return new Response('Credenciales inválidas', { status: 401 });
+    return NextResponse.json({ error: 'Credenciales inválidas' }, { status: 401 });
   }
 
-  // firmamos token
-  const token = signToken({ sub: user.id });
-  // devolvemos cookie HTTPOnly
-  const headers = new Headers({
-    'Set-Cookie': `token=${token}; HttpOnly; Path=/; Max-Age=${7 * 24 * 60 * 60}`
+  const token = generateToken({ sub: user.id, role: user.role });
+
+  // Prepara la respuesta con JSON y cookie
+  const res = NextResponse.json(
+    { username: user.username, role: user.role },
+    { status: 200 }
+  );
+  res.cookies.set('token', token, {
+    httpOnly: true,
+    path: '/',
+    maxAge: 7 * 24 * 60 * 60,
   });
-  return new Response('Logueado', { status: 200, headers });
+  return res;
 }
