@@ -1,26 +1,25 @@
-// src/lib/auth.js
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
 const SALT_ROUNDS = 10;
-const JWT_SECRET = process.env.JWT_SECRET;
+const JWT_SECRET = process.env.JWT_SECRET; // ponlo en .env.local
 
-// Hash de contraseña
-export async function hashPassword(password) {
-  return await bcrypt.hash(password, SALT_ROUNDS);
+/** hashea la contraseña */
+export async function hashPassword(pw) {
+  return bcrypt.hash(pw, SALT_ROUNDS);
 }
 
-// Comparar contraseña
-export async function comparePasswords(password, hash) {
-  return await bcrypt.compare(password, hash);
+/** compara el password con el hash */
+export async function verifyPassword(pw, hash) {
+  return bcrypt.compare(pw, hash);
 }
 
-// Genera un JWT con payload { sub: userId, role }
-export function generateToken(payload) {
+/** genera un JWT con la id del usuario */
+export function signToken(payload) {
   return jwt.sign(payload, JWT_SECRET, { expiresIn: '7d' });
 }
 
-// Verifica el JWT y devuelve el payload
+/** verifica el token o lanza */
 export function verifyToken(token) {
   return jwt.verify(token, JWT_SECRET);
 }
