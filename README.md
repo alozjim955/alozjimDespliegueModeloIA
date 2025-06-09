@@ -54,14 +54,22 @@ portable, multiplataforma y fácilmente accesible desde un navegador web.
 
 - Elección de las distintas librerías y dependencias de nuestro proyecto (PyTorch,
     Transformers, etc): 2 horas
+
 - Configuración del entorno de desarrollo: 1 hora
+
 - Adquisición del servicio de contenedores y su puesta en marcha: 1 hora
+
 - Programación del núcleo del proyecto (armar el modelo IA en Python): 30 horas
+
 - Creación de la envoltura web del núcleo (escribir la aplicación en
     Javascript/Typescript o Python): 20 horas
+
 - Unión de los dos módulos creados: 5 horas
+
 - Despliegue de la aplicación en un contenedor en la nube: 3 horas
+
 - Testeo del proyecto en su conjunto: 8 horas
+
 Horas totales planificadas para el proyecto: 70 horas
 
 ## Realización del proyecto
@@ -71,16 +79,20 @@ Horas totales planificadas para el proyecto: 70 horas
 Como visión general de todo el trabajo realizado, puede resumirse en el desarrollo y
 despliegue del web impulsado por IA en un servicio hospedado en la nube y contenerizado,
 con su respectivo servidor web, dominio y certificado SSL.
+
 En primer lugar, se hizo un trabajo de investigación para buscar la forma en la que se
 podría implementar el modelo IA en nuestra infraestructura digital. Tras un periodo de
 análisis, se decidió por la librería oficial de OpenAI.
+
 Lo siguiente fue el desarrollo de la aplicación. Tras muchos prototipos y versiones, la
 versión final se divide en dos partes claras. La primera es un sistema de inicio de sesión
 y registro de usuarios sencillo y minimalista, y la segunda es el propio chat con el que
 se puede interactuar con el modelo IA.
+
 Después, se procedió a elegir que sistema de hospedaje web se utilizaría para el
 despliegue web de la aplicación. Luego de un tiempo de investigación, se eligió por el
 módulo de estudiante de AWS Academy.
+
 Por último, se configuró una imagen de Docker y un archivo de docker-compose para
 desplegar rápidamente el proyecto en el servidor remoto. Además, se configuró un servidor
 de Nginx para la redirección de la IP del servidor y su respectivo puerto a un dominio
@@ -91,17 +103,19 @@ certificado con SSL.
 
 Los principales problemas se han encontrado con el propio modelo IA, y luego problemas
 menores con el ecosistema de desarrollo web.
+
 Los problemas menos importantes fueron la elección de librerías a la hora de desarrollar la
 interfaz gráfica de la aplicación. Por ejemplo, existe una librería de interfaces específicas
 para aplicaciones IA llamada assistant-ui, que parece dar buenos resultados. El problema
-que
-tiene es que la documentación está muy limitada y es difícil hacer cambios en el código.
+que tiene es que la documentación está muy limitada y es difícil hacer cambios en el código.
 Esta librería se acabó descartando y se pasó a una interfaz hecha a mano usando Next.js
 (con Javascript y CSS).
+
 Una situación parecida ocurrió con otros elementos del sistema. Programas de terceros
 como NextAuth (sistema de autenticación) o Supabase (base de datos) tienen una
 documentación dispersa y/o limitada, y es complicado integrarlos con el modelo IA como se
 relata más adelante.
+
 Con Next.js había que ser cuidadoso a la hora de elegir las librerías que importar, porque
 podrían estar obsoletas (¡Aunque solo tuvieran 6 meses de antigüedad!), y la
 documentación no es estelar. Aunque era preferible usar este framework a usar
@@ -109,29 +123,32 @@ herramientas más minimalistas como React o incluso Javascript puro por tener un
 con funcionalidades mínimas, y no tener que importar todo tipo de librerías a mano para
 características básicas; como CSS personalizado, enrutado de archivos y páginas
 optimizadas.
+
 Se ha tenido que usar el módulo de estudiante de AWS Academy debido a que no se ha
 podido encontrar un mejor sistema de hospedaje web. Lo único interesante sería usar un
 VPS de Oracle, ya que existe una versión gratis. El único problema es que no existen
 servidores gratis en Europa.
+
 Por último, los problemas más severos han venido a partir de la integración de la IA en la
 aplicación web.
+
 Originalmente se pensó en utilizar un modelo local hosteado en un ordenador, pero se
 descubrió que era necesario hardware prohibitivamente caro para hacerlo funcionar en
 condiciones; una buena gráfica dedicada a Inteligencia Artificial puede rondar los 2000€, y
 los servidores remotos que usan gráficas para el uso de modelos IA tienen un precio
 alrededor de 13€ la hora. A la vista de todos estos problemas, se decidió por el de una
 librería de OpenAI que usaría una API que se comunicaría con un modelo IA remoto.
+
 El problema con este enfoque es que la API es limitada. Muchas funcionalidades que se
 tenían pensadas para la aplicación se han descartado debido a la problemática de intentar
 implementarlas con esta librería, y la documentación de Open AI es bastante extensa y
 compleja. Entre otras funcionalidades, se probó implementar un sistema de subida de
 imágenes y archivos y un panel de administración que pudiera modificar el código de la
 aplicación para que se pudiera cambiar el modelo de IA y su comportamiento en tiempo
-real. Pero todos estos esfuerzos se han visto frustrados. El resultado final es que solo se
+real. Pero todos estos esfuerzos se han visto frustrados. 
 
-
-puede procesar texto. Pero para un programa pensado para consultas, esto no es tan
-grave.
+El resultado final es que solo se puede procesar texto. Pero para un programa pensado 
+para consultas, esto no es tan grave.
 
 ### Modificaciones hechas en el proyecto
 
@@ -145,6 +162,7 @@ grave.
 Las mayores mejoras se podrían encontrar en el modelo IA y su implementación. Hay que
 tener en cuenta que este es un programa ligero en el que la interfaz gráfica no va a cambiar
 mucho.
+
 Lo interesante sería (si se tuvieran los recursos necesarios) poseer un modelo local en el
 que uno mismo podría programar la API que conectara su modelo con la interfaz. Así podría
 implementarse funciones más complejas, como la creación y modificación de chats con
@@ -152,6 +170,21 @@ perfiles personalizados en tiempo real, la manipulación por parte del
 modelo de distintos recursos digitales (como PDF, imágenes, archivos de texto, etc.).
 Otra mejora interesante sería la mejora del sistema de inicio de sesión y registro usuarios, y
 que permitiera conectarse usando cuentas de servicios externos (como Gmail o Github).
+
+### Cómo desplegar el proyecto
+
+Simplemente se debe clonar el repositorio con un cliente de git:
+
+- **git clone https://github.com/alozjim955/alozjimDespliegueModeloIA.git**
+
+Después, teniendo ya Docker instalado (depende del sistema operativo, por favor
+consulte la página oficial de Docker), se introduce el siguiente comando dentro
+del directorio del proyecto:
+
+- **docker-compose up -d**
+
+¡Y listo! Desde nuestro navegador, escribimos *http://localhost:3000*, y ya podremos 
+usar nuestra aplicación.
 
 ### Bibliografía
 
